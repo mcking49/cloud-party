@@ -4,17 +4,21 @@ importers:
 
   .:
     specifiers:
+      '@cloud-party/prettier': workspace:*
       '@cloud-party/tsconfig': workspace:*
       '@types/node': ^18.0.0
       eslint: ^8.35.0
       eslint-config-cloud-party: workspace:*
+      prettier: ^2.8.4
       turbo: ^1.8.3
       typescript: ^4.9.5
     devDependencies:
+      '@cloud-party/prettier': link:packages/prettier
       '@cloud-party/tsconfig': link:packages/tsconfig
       '@types/node': 18.14.6
       eslint: 8.35.0
       eslint-config-cloud-party: link:packages/eslint
+      prettier: 2.8.4
       turbo: 1.8.3
       typescript: 4.9.5
 
@@ -52,6 +56,7 @@ importers:
       '@typescript-eslint/parser': ^5.54.1
       eslint: ^8.35.0
       eslint-config-next: ^13.2.3
+      eslint-config-prettier: ^8.6.0
       eslint-config-turbo: ^0.0.9
       eslint-plugin-react: ^7.32.2
       typescript: ^4.9.5
@@ -60,11 +65,23 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.54.1_mlk7dnz565t663n4razh6a6v6i
       '@typescript-eslint/parser': 5.54.1_ycpbpc6yetojsgtrx3mwntkhsu
       eslint-config-next: 13.2.3_ycpbpc6yetojsgtrx3mwntkhsu
+      eslint-config-prettier: 8.7.0_eslint@8.35.0
       eslint-config-turbo: 0.0.9_eslint@8.35.0
       eslint-plugin-react: 7.32.2_eslint@8.35.0
     devDependencies:
       eslint: 8.35.0
       typescript: 4.9.5
+
+  packages/prettier:
+    specifiers:
+      '@ianvs/prettier-plugin-sort-imports': ^3.7.1
+      '@types/prettier': ^2.7.2
+      prettier: ^2.8.4
+    dependencies:
+      '@ianvs/prettier-plugin-sort-imports': 3.7.1_prettier@2.8.4
+      '@types/prettier': 2.7.2
+    devDependencies:
+      prettier: 2.8.4
 
   packages/tsconfig:
     specifiers: {}
@@ -296,6 +313,28 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
 
+  /@ianvs/prettier-plugin-sort-imports/3.7.1_prettier@2.8.4:
+    resolution: {integrity: sha512-XDnBUUruJY9KgNd7T2ZHnVPWo5B9NzVDCLEMm7HjXTA3rTtMg5Q46gYRjLvampDXSmN8+icu54aRE3IIT8U+1w==}
+    peerDependencies:
+      '@vue/compiler-sfc': '>=3.0.0'
+      prettier: 2.x
+    peerDependenciesMeta:
+      '@vue/compiler-sfc':
+        optional: true
+    dependencies:
+      '@babel/core': 7.21.0
+      '@babel/generator': 7.21.1
+      '@babel/parser': 7.21.2
+      '@babel/traverse': 7.21.2
+      '@babel/types': 7.21.2
+      javascript-natural-sort: 0.7.1
+      lodash.clone: 4.5.0
+      lodash.isequal: 4.5.0
+      prettier: 2.8.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /@jridgewell/gen-mapping/0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -517,6 +556,10 @@ packages:
   /@types/node/18.14.6:
     resolution: {integrity: sha512-93+VvleD3mXwlLI/xASjw0FzKcwzl3OdTCzm1LaRfqgS21gfFtK3zDXM5Op9TeeMsJVOaJ2VRDpT9q4Y3d0AvA==}
     dev: true
+
+  /@types/prettier/2.7.2:
+    resolution: {integrity: sha512-KufADq8uQqo1pYKVIYzfKbJfBAc0sOeXqGbFaSpv8MRmC/zXgowNZmFcbngndGk922QDmOASEXUZCaY48gs4cg==}
+    dev: false
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
@@ -1090,6 +1133,15 @@ packages:
     transitivePeerDependencies:
       - eslint-import-resolver-webpack
       - supports-color
+    dev: false
+
+  /eslint-config-prettier/8.7.0_eslint@8.35.0:
+    resolution: {integrity: sha512-HHVXLSlVUhMSmyW4ZzEuvjpwqamgmlfkutD53cYXLikh4pt/modINRcCIApJ84czDxM4GZInwUrromsDdTImTA==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.35.0
     dev: false
 
   /eslint-config-turbo/0.0.9_eslint@8.35.0:
@@ -1812,6 +1864,10 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
+  /javascript-natural-sort/0.7.1:
+    resolution: {integrity: sha512-nO6jcEfZWQXDhOiBtG2KvKyEptz7RVbpGP4vTD2hLBdmNQSsCiicO2Ioinv6UI4y9ukqnBpy+XZ9H6uLNgJTlw==}
+    dev: false
+
   /js-sdsl/4.3.0:
     resolution: {integrity: sha512-mifzlm2+5nZ+lEcLJMoBK0/IH/bDg8XnJfd/Wq6IP+xoCjLZsTOnV2QpxlVbX9bMnkl5PdEjNtBJ9Cj1NjifhQ==}
 
@@ -1877,6 +1933,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       p-locate: 5.0.0
+
+  /lodash.clone/4.5.0:
+    resolution: {integrity: sha512-GhrVeweiTD6uTmmn5hV/lzgCQhccwReIVRLHp7LT4SopOjqEZ5BbX8b5WWEtAKasjmy8hR7ZPwsYlxRCku5odg==}
+    dev: false
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -2138,6 +2202,11 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
 
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}

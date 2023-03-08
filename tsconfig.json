@@ -23,5 +23,9 @@
   },
   "include": [
     ".eslintrc.js",
+    "prettier.config.cjs"
+  ],
+  "exclude": [
+    "./packages/prettier/index.js"
   ]
 }

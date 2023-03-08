@@ -10,10 +10,10 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.cjs",
-    "**/*.mjs",
-    ".eslintrc.js"
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.cjs",
+    "./**/*.mjs",
+    "./.eslintrc.js"
   ]
 }
