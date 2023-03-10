@@ -1,0 +1,20 @@
+{
+  "name": "@cloud-party/db",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push --skip-generate",
+    "dev": "prisma studio --port 5556"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.11.0"
+  },
+  "devDependencies": {
+    "@cloud-party/tsconfig": "workspace:*",
+    "prisma": "^4.11.0",
+    "typescript": "^4.9.5"
+  }
+}
