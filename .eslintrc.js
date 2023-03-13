@@ -10,6 +10,8 @@ module.exports = {
       "./tsconfig.json",
       "./apps/*/tsconfig.json",
       "./packages/db/tsconfig.json",
+      "./packages/api/tsconfig.json",
+      "./packages/auth/tsconfig.json",
     ],
   },
   settings: {

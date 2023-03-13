@@ -9,10 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloud-party/api": "workspace:*",
+    "@cloud-party/auth": "workspace:*",
     "@cloud-party/db": "workspace:*",
+    "@tanstack/react-query": "^4.26.1",
+    "@trpc/client": "^10.15.0",
+    "@trpc/next": "^10.15.0",
+    "@trpc/react-query": "^10.15.0",
+    "@trpc/server": "^10.15.0",
     "next": "^13.2.3",
+    "next-auth": "^4.20.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "superjson": "^1.12.2",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

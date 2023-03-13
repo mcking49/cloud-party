@@ -8,6 +8,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "peerDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1"
+  },
   "devDependencies": {
     "prettier": "^2.8.4"
   },

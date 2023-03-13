@@ -1,0 +1,7 @@
+{
+  "extends": "@cloud-party/tsconfig/nextjs.json",
+  "include": [
+    "src",
+    "index.ts"
+  ]
+}
