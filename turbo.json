@@ -1,21 +1,42 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["NODE_ENV", "DISCORD_CLIENT_ID", "DISCORD_CLIENT_SECRET"],
+  "globalEnv": [
+    "NODE_ENV",
+    "DISCORD_CLIENT_ID",
+    "DISCORD_CLIENT_SECRET",
+    "VERCEL_URL"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build", "^db:generate"],
-      "outputs": ["dist/**", ".next/**"]
+      "outputs": ["dist/**", ".next/**", "storybook-static/**"]
+    },
+    "clean": {
+      "cache": false
+    },
+    "//#clean": {
+      "cache": false
     },
     "lint": {},
+    "lint:fix": {},
     "dev": {
       "dependsOn": ["^db:generate"],
-      "cache": false
+      "cache": false,
+      "persistent": true
+    },
+    "dev:ui": {
+      "cache": false,
+      "persistent": true
     },
     "db:generate": {
       "cache": false
     },
     "db:push": {
+      "cache": false
+    },
+    "type-check": {
+      "dependsOn": ["^db:generate"],
       "cache": false
     }
   }

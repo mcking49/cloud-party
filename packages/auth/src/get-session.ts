@@ -1,7 +1,7 @@
 import {
-  GetServerSidePropsContext,
-  NextApiRequest,
-  NextApiResponse,
+  type GetServerSidePropsContext,
+  type NextApiRequest,
+  type NextApiResponse,
 } from "next";
 import { getServerSession as $getServerSession } from "next-auth";
 

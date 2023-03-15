@@ -8,9 +8,14 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "clean": "git clean -xdf node_modules",
+    "clean:workspaces": "turbo clean",
     "dev": "turbo run dev",
-    "lint": "turbo run lint --no-cache --force",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "dev:ui": "turbo run dev:ui",
+    "lint": "turbo run lint",
+    "lint:fix": "turbo lint:fix",
+    "format": "prettier --write \"**/*.{ts,tsx,md,js}\"",
+    "type-check": "turbo type-check"
   },
   "devDependencies": {
     "@cloud-party/prettier": "workspace:*",
@@ -26,7 +31,7 @@
     "typescript": "^4.9.5"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "16"
   },
   "packageManager": "pnpm@7.29.0"
 }

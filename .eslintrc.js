@@ -12,6 +12,7 @@ module.exports = {
       "./packages/db/tsconfig.json",
       "./packages/api/tsconfig.json",
       "./packages/auth/tsconfig.json",
+      "./packages/ui/tsconfig.json",
     ],
   },
   settings: {

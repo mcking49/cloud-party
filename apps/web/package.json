@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "clean": "git clean -xdf .next .turbo node_modules",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,6 +13,7 @@
     "@cloud-party/api": "workspace:*",
     "@cloud-party/auth": "workspace:*",
     "@cloud-party/db": "workspace:*",
+    "@cloud-party/ui": "workspace:*",
     "@tanstack/react-query": "^4.26.1",
     "@trpc/client": "^10.15.0",
     "@trpc/next": "^10.15.0",

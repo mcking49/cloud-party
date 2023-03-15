@@ -1,9 +1,6 @@
 /** @type {import("tailwindcss").Config} */
 const config = {
-  content: [
-    "./src/**/*.tsx",
-    "./node_modules/@cloud-party/ui/**/*.{tsx,js,ts}",
-  ],
+  content: ["./src/**/*.tsx"],
   presets: [require("@cloud-party/tailwind")],
 };
 

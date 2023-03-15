@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
   "dependencies": {
     "@types/eslint": "^8.21.1",
     "@typescript-eslint/eslint-plugin": "^5.54.1",

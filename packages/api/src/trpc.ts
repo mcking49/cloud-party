@@ -8,11 +8,11 @@
  */
 
 import { TRPCError, initTRPC } from "@trpc/server";
-import { CreateNextContextOptions } from "@trpc/server/adapters/next";
+import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
-import { Session, getServerSession } from "@cloud-party/auth";
+import { getServerSession, type Session } from "@cloud-party/auth";
 import { prisma } from "@cloud-party/db";
 
 /**

@@ -5,6 +5,9 @@
   "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
   "publishConfig": {
     "access": "public"
   },

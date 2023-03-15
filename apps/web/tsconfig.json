@@ -5,6 +5,12 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "zod": [
+        "node_modules/zod/"
+      ],
+      "@trpc/react-query": [
+        "node_modules/@trpc/react-query"
       ]
     }
   },
