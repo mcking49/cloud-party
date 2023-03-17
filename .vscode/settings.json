@@ -13,5 +13,11 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
-  }
+  },
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "clsx\\(([^)]*)\\)",
+      "(?:'|\"|`)([^']*)(?:'|\"|`)"
+    ]
+  ]
 }
