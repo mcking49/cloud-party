@@ -7,12 +7,12 @@
     "node": "16"
   },
   "scripts": {
-    "dev": "pnpm storybook",
-    "dev:ui": "pnpm dev",
+    "build-storybook": "build-storybook",
     "build": "pnpm build-storybook",
     "clean": "git clean -xdf .turbo node_modules",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "dev:ui": "pnpm dev",
+    "dev": "pnpm storybook",
+    "storybook": "start-storybook -p 6006 --no-open"
   },
   "dependencies": {
     "@cloud-party/ui": "workspace:*",

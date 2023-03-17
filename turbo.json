@@ -1,12 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "globalEnv": [
-    "NODE_ENV",
-    "DISCORD_CLIENT_ID",
-    "DISCORD_CLIENT_SECRET",
-    "VERCEL_URL"
-  ],
+  "globalDependencies": ["**/.env"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build", "^db:generate"],
@@ -18,10 +12,15 @@
     "//#clean": {
       "cache": false
     },
-    "lint": {},
-    "lint:fix": {},
+    "db:generate": {
+      "cache": false,
+      "inputs": ["prisma/schema.prisma"]
+    },
+    "db:push": {
+      "cache": false,
+      "inputs": ["prisma/schema.prisma"]
+    },
     "dev": {
-      "dependsOn": ["^db:generate"],
       "cache": false,
       "persistent": true
     },
@@ -29,15 +28,23 @@
       "cache": false,
       "persistent": true
     },
-    "db:generate": {
-      "cache": false
-    },
-    "db:push": {
-      "cache": false
-    },
+    "lint": {},
+    "lint:fix": {},
     "type-check": {
       "dependsOn": ["^db:generate"],
       "cache": false
     }
-  }
+  },
+  "globalEnv": [
+    "CI",
+    "DATABASE_URL",
+    "DISCORD_CLIENT_ID",
+    "DISCORD_CLIENT_SECRET",
+    "NEXTAUTH_SECRET",
+    "NEXTAUTH_URL",
+    "NODE_ENV",
+    "SKIP_ENV_VALIDATION",
+    "VERCEL_URL",
+    "VERCEL"
+  ]
 }

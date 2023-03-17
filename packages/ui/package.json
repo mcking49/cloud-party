@@ -16,11 +16,11 @@
     "dist"
   ],
   "scripts": {
-    "dev": "pnpm build --watch",
-    "dev:ui": "pnpm dev",
     "build-package": "vite build",
     "build": "pnpm build-package",
     "clean": "rm -rf .turbo node_modules",
+    "dev:ui": "pnpm dev",
+    "dev": "pnpm build --watch",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
