@@ -1,5 +1,11 @@
 # @cloud-party/ui
 
+## 0.0.3
+
+### Patch Changes
+
+- 6667443: Add readme and author details
+
 ## 0.0.2
 
 ### Patch Changes
