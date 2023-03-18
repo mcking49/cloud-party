@@ -34,5 +34,5 @@ yarn-error.log*
 .turbo
 
 storybook-static
-
 tsconfig.tsbuildinfo
+dist
