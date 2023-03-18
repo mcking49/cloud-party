@@ -15,6 +15,6 @@
   "devDependencies": {
     "@cloud-party/tsconfig": "workspace:*",
     "prisma": "^4.11.0",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.2"
   }
 }

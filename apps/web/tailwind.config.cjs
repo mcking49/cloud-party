@@ -4,6 +4,7 @@ const config = {
     "./src/**/*.tsx",
     "./node_modules/@cloud-party/ui/**/*.{tsx,js,ts}",
   ],
+  // @ts-ignore
   presets: [require("@cloud-party/tailwind")],
 };
 

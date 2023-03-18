@@ -8,10 +8,11 @@ export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true })],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
+      entry: [path.resolve(__dirname, "src/index.ts"), "tailwind.config.cjs"],
       name: "Cloud Party: React + Tailwind UI",
       formats: ["es", "cjs"],
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format, entryName) =>
+        entryName.includes("tailwind") ? "tailwind.js" : `index.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],
