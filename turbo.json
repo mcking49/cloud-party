@@ -31,7 +31,7 @@
     "lint": {},
     "lint:fix": {},
     "type-check": {
-      "dependsOn": ["^db:generate"],
+      "dependsOn": ["^db:generate", "^build"],
       "cache": false
     }
   },
