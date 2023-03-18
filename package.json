@@ -15,8 +15,8 @@
     "dev": "pnpm with-env turbo dev --parallel",
     "dev:ui": "pnpm with-env turbo dev:ui",
     "format": "prettier --write \"**/*.{ts,tsx,md,js,cjs,mjs}\" --ignore-path .gitignore",
-    "lint": "turbo lint && manypkg check",
-    "lint:fix": "turbo lint:fix && manypkg fix",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
     "publish-packages": "turbo build lint --filter ui && changeset version && changeset publish",
     "type-check": "turbo type-check",
     "with-env": "dotenv -e .env --"
@@ -26,7 +26,6 @@
     "@cloud-party/prettier": "workspace:*",
     "@cloud-party/tsconfig": "workspace:*",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
-    "@manypkg/cli": "^0.20.0",
     "@types/eslint": "^8.21.2",
     "@types/node": "^18.15.3",
     "dotenv-cli": "^7.1.0",
