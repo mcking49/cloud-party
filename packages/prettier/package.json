@@ -2,14 +2,10 @@
   "name": "@cloud-party/prettier",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
     "clean": "rm -rf .turbo node_modules"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "peerDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1"
