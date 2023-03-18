@@ -17,7 +17,7 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      className={clsx(className, "rounded-md bg-primary-500 py-2 px-4")}
+      className={clsx(className, "rounded-lg bg-primary-500 py-2 px-4")}
       {...props}
     >
       {children}
