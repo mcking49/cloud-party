@@ -17,7 +17,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md,js,cjs,mjs}\" --ignore-path .gitignore",
     "lint": "turbo lint && manypkg check",
     "lint:fix": "turbo lint:fix && manypkg fix",
-    "publish-packages": "turbo build lint && changeset version && changeset publish",
+    "publish-packages": "turbo build lint --filter ui && changeset version && changeset publish",
     "type-check": "turbo type-check",
     "with-env": "dotenv -e .env --"
   },
