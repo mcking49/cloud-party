@@ -1,6 +1,11 @@
 {
   "name": "@cloud-party/ui",
   "version": "0.0.2",
+  "author": {
+    "name": "Miten Chauhan",
+    "email": "miten@chauhan.nz",
+    "url": "https://www.mitenchauhan.com/"
+  },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
   "types": "./dist/index.d.ts",
