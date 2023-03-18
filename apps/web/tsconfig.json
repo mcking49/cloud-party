@@ -1,0 +1,25 @@
+{
+  "extends": "@cloud-party/tsconfig/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "zod": [
+        "node_modules/zod/"
+      ],
+      "@trpc/react-query": [
+        "node_modules/@trpc/react-query"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "./**/*.cjs",
+    "./**/*.mjs",
+    "./.eslintrc.js"
+  ]
+}

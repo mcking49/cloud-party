@@ -1,0 +1,32 @@
+{
+  "name": "@cloud-party/api",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@trpc/client": "^10.15.0",
+    "@trpc/server": "^10.15.0"
+  },
+  "dependencies": {
+    "@cloud-party/auth": "workspace:*",
+    "@cloud-party/db": "workspace:*",
+    "@trpc/client": "^10.16.0",
+    "@trpc/server": "^10.16.0",
+    "superjson": "^1.12.2",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@cloud-party/tsconfig": "workspace:*",
+    "eslint": "^8.36.0",
+    "eslint-config-cloud-party": "workspace:*",
+    "typescript": "^5.0.2"
+  }
+}

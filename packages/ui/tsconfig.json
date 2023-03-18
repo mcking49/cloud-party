@@ -1,0 +1,19 @@
+{
+  "extends": "@cloud-party/tsconfig/react-library.json",
+  "include": [
+    "./src",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@storybook/react": [
+        "node_modules/@storybook/react"
+      ]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@cloud-party/prettier",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "peerDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
+    "@types/prettier": "^2.7.2"
+  }
+}
