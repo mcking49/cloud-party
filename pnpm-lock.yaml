@@ -251,12 +251,10 @@ importers:
     specifiers:
       autoprefixer: ^10.4.14
       postcss: ^8.4.21
-      postcss-typescript-d-ts: ^1.0.0
       tailwindcss: ^3.2.7
     devDependencies:
       autoprefixer: 10.4.14_postcss@8.4.21
       postcss: 8.4.21
-      postcss-typescript-d-ts: 1.0.0_postcss@8.4.21
       tailwindcss: 3.2.7_postcss@8.4.21
 
   packages/tsconfig:
@@ -12026,16 +12024,6 @@ packages:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
-    dev: true
-
-  /postcss-typescript-d-ts/1.0.0_postcss@8.4.21:
-    resolution: {integrity: sha512-rsqgKN+4DDYhNH27SuFoQFpwV0fEjqgTvgIqsE9oGDM9uz/WH4ypxad1dHufIg4+s7d8zXRNE5o5f6N815eCVQ==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      postcss: ^8.1.5
-    dependencies:
-      postcss: 8.4.21
-      postcss-selector-parser: 6.0.11
     dev: true
 
   /postcss-value-parser/4.2.0:
