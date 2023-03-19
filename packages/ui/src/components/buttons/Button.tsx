@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from "react";
+import { type ButtonHTMLAttributes, type FC } from "react";
 import clsx from "clsx";
 
 export type ButtonProps = {
@@ -17,7 +17,10 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <button
-      className={clsx(className, "rounded-lg bg-primary-500 py-2 px-4")}
+      className={clsx(
+        className,
+        "rounded-lg bg-lime-300 py-2 px-4 text-lime-900",
+      )}
       {...props}
     >
       {children}
