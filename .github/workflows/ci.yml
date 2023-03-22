@@ -8,9 +8,9 @@ on:
   merge_group:
 
 jobs:
-  build-lint:
+  build-lint-chromatic:
     env:
-      DATABASE_URL: file:./db.sqlite
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
@@ -19,6 +19,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2.2.4
@@ -48,3 +50,11 @@ jobs:
         run: pnpm ci-check
         env:
           SKIP_ENV_VALIDATION: true
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          storybookBuildDir: apps/ui-storybook/storybook-static
+          autoAcceptChanges: main
+          exitOnceUploaded: true

@@ -16,5 +16,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   logger: "hello world",
   className: "this-is-a-test-class",
-  children: "Look at me button",
+  children: "Button",
 };
