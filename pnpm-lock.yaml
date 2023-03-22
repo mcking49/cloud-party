@@ -10,6 +10,7 @@ importers:
       '@ianvs/prettier-plugin-sort-imports': ^3.7.1
       '@types/eslint': ^8.21.2
       '@types/node': ^18.15.3
+      chromatic: ^6.17.2
       dotenv-cli: ^7.1.0
       eslint: ^8.36.0
       eslint-config-cloud-party: workspace:*
@@ -24,6 +25,7 @@ importers:
       '@ianvs/prettier-plugin-sort-imports': 3.7.1_prettier@2.8.4
       '@types/eslint': 8.21.2
       '@types/node': 18.15.3
+      chromatic: 6.17.2
       dotenv-cli: 7.1.0
       eslint: 8.36.0
       eslint-config-cloud-party: link:packages/eslint
@@ -52,7 +54,6 @@ importers:
       '@vitejs/plugin-react-swc': ^3.2.0
       autoprefixer: ^10.4.14
       babel-loader: ^8.3.0
-      chromatic: ^6.17.2
       eslint: ^8.36.0
       eslint-config-cloud-party: workspace:*
       postcss: ^8.4.21
@@ -83,7 +84,6 @@ importers:
       '@vitejs/plugin-react-swc': 3.2.0_vite@4.2.0
       autoprefixer: 10.4.14_postcss@8.4.21
       babel-loader: 8.3.0_h5x7dh6zbbyopr7jvxivhylqpa
-      chromatic: 6.17.2
       eslint: 8.36.0
       eslint-config-cloud-party: link:../../packages/eslint
       postcss: 8.4.21
