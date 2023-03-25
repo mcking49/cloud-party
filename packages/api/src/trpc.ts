@@ -7,6 +7,11 @@
  * The pieces you will need to use are documented accordingly near the end
  */
 
+import type {
+  SignedInAuthObject,
+  SignedOutAuthObject,
+} from "@clerk/nextjs/dist/api";
+import { getAuth } from "@clerk/nextjs/server";
 import { TRPCError, initTRPC } from "@trpc/server";
 import { type CreateNextContextOptions } from "@trpc/server/adapters/next";
 import superjson from "superjson";
@@ -23,7 +28,12 @@ import { prisma } from "@cloud-party/db";
  * processing a request
  *
  */
-type CreateContextOptions = {};
+
+type AuthContext = SignedInAuthObject | SignedOutAuthObject;
+
+type CreateContextOptions = {
+  auth: AuthContext;
+};
 
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use
@@ -34,9 +44,10 @@ type CreateContextOptions = {};
  * - trpc's `createSSGHelpers` where we don't have req/res
  * @see https://create.t3.gg/en/usage/trpc#-servertrpccontextts
  */
-const createInnerTRPCContext = (_opts: CreateContextOptions) => {
+const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     prisma,
+    auth: opts.auth,
   };
 };
 
@@ -45,8 +56,14 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-export const createTRPCContext = async (_opts: CreateNextContextOptions) => {
-  return createInnerTRPCContext({});
+export const createTRPCContext = (opts: CreateNextContextOptions) => {
+  const { req } = opts;
+
+  const auth = getAuth(req);
+
+  return createInnerTRPCContext({
+    auth,
+  });
 };
 
 /**
@@ -95,12 +112,19 @@ export const publicProcedure = t.procedure;
  * Reusable middleware that enforces users are logged in before running the
  * procedure
  */
-const enforceUserIsAuthed = t.middleware(({ ctx: _ctx, next: _next }) => {
-  throw new TRPCError({
-    code: "UNAUTHORIZED",
-    message: "Authentication enforcement is not implemented yet",
+const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
+  if (!ctx.auth.userId) {
+    throw new TRPCError({
+      code: "UNAUTHORIZED",
+      message: "User is not logged in",
+    });
+  }
+
+  return next({
+    ctx: {
+      auth: ctx.auth,
+    },
   });
-  // return next();
 });
 
 /**

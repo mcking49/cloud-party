@@ -5,10 +5,9 @@ import { z } from "zod";
  * app isn't built with invalid env vars
  */
 const server = z.object({
+  CLERK_SECRET_KEY: z.string().min(1),
   DATABASE_URL: z.string().url(),
   NODE_ENV: z.enum(["development", "test", "production"]),
-  DISCORD_CLIENT_ID: z.string(),
-  DISCORD_CLIENT_SECRET: z.string(),
 });
 
 /**
@@ -17,6 +16,7 @@ const server = z.object({
  * a prefix of `NEXT_PUBLIC_`.
  */
 const client = z.object({
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
   NEXT_PUBLIC_FLAGSMITH_ENV_KEY: z.string().min(1),
 });
 
@@ -27,11 +27,12 @@ const client = z.object({
  * @type {Record<keyof z.infer<typeof server> | keyof z.infer<typeof client>, string | undefined>}
  */
 const processEnv = {
+  CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
   DATABASE_URL: process.env.DATABASE_URL,
-  DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
-  DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
-  NODE_ENV: process.env.NODE_ENV,
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+    process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
   NEXT_PUBLIC_FLAGSMITH_ENV_KEY: process.env.NEXT_PUBLIC_FLAGSMITH_ENV_KEY,
+  NODE_ENV: process.env.NODE_ENV,
 };
 
 const merged = server.merge(client);

@@ -16,6 +16,7 @@
     "@trpc/server": "^10.15.0"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.11.13",
     "@cloud-party/db": "workspace:*",
     "@trpc/client": "^10.16.0",
     "@trpc/server": "^10.16.0",
