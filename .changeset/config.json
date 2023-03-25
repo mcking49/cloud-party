@@ -10,7 +10,6 @@
   "ignore": [
     "ui-storybook",
     "@cloud-party/prettier",
-    "@cloud-party/auth",
     "@cloud-party/api",
     "@cloud-party/db",
     "web"

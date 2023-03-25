@@ -16,7 +16,6 @@
     "@trpc/server": "^10.15.0"
   },
   "dependencies": {
-    "@cloud-party/auth": "workspace:*",
     "@cloud-party/db": "workspace:*",
     "@trpc/client": "^10.16.0",
     "@trpc/server": "^10.16.0",
