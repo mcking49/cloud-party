@@ -25,9 +25,11 @@ const server = z.object({
 /**
  * Specify client-side environment variables schema so the app
  * can't be built with invalid env vars. Should be exposed with
- * a prefix of `NEXT_PUBLIX_`.
+ * a prefix of `NEXT_PUBLIC_`.
  */
-const client = z.object({});
+const client = z.object({
+  NEXT_PUBLIC_FLAGSMITH_ENV_KEY: z.string().min(1),
+});
 
 /**
  * You can't destruct `process.env` as a regular object in the Next.js edge runtimes
@@ -42,6 +44,7 @@ const processEnv = {
   NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
   NEXTAUTH_URL: process.env.NEXTAUTH_URL,
   NODE_ENV: process.env.NODE_ENV,
+  NEXT_PUBLIC_FLAGSMITH_ENV_KEY: process.env.NEXT_PUBLIC_FLAGSMITH_ENV_KEY,
 };
 
 const merged = server.merge(client);
