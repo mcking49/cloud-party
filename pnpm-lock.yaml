@@ -111,6 +111,7 @@ importers:
       autoprefixer: ^10.4.14
       eslint: ^8.36.0
       eslint-config-cloud-party: workspace:*
+      flagsmith: ^3.18.2
       next: ^13.2.4
       next-auth: ^4.20.1
       postcss: ^8.4.21
@@ -130,6 +131,7 @@ importers:
       '@trpc/next': 10.16.0_ce5lki43zjayzugu2gngg3k6ga
       '@trpc/react-query': 10.16.0_xqgqjjeu4juncpfqrbxjw3t7rq
       '@trpc/server': 10.16.0
+      flagsmith: 3.18.2
       next: 13.2.4_hrdbe576m4w26u2yfpqpvbxyky
       next-auth: 4.20.1_ld2jel3hspngo3u5lti2kgl2sq
       react: 18.2.0
@@ -8766,6 +8768,10 @@ packages:
       micromatch: 4.0.5
       pkg-dir: 4.2.0
     dev: true
+
+  /flagsmith/3.18.2:
+    resolution: {integrity: sha512-U/v7z6FiGOq6sdeRx5QSlkkltmnVL4dk8WWVEIR5s48qs2C+OkQMbd4yjSextyEhdyjbrFaWGAXKSsHOxTIRJg==}
+    dev: false
 
   /flaschenpost/1.1.3:
     resolution: {integrity: sha512-1VAYPvDsVBGFJyUrOa/6clnJwZYC3qVq9nJLcypy6lvaaNbo1wOQiH8HQ+4Fw/k51pVG7JHzSf5epb8lmIW86g==}
