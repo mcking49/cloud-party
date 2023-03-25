@@ -12,8 +12,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.11.13",
     "@cloud-party/api": "workspace:*",
-    "@cloud-party/auth": "workspace:*",
     "@cloud-party/db": "workspace:*",
     "@cloud-party/ui": "workspace:*",
     "@tanstack/react-query": "^4.27.0",
@@ -23,7 +23,6 @@
     "@trpc/server": "^10.16.0",
     "flagsmith": "^3.18.2",
     "next": "^13.2.4",
-    "next-auth": "^4.20.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "^1.12.2",

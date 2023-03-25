@@ -1,11 +1,7 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: [
-    "@cloud-party/api",
-    "@cloud-party/auth",
-    "@cloud-party/db",
-  ],
+  transpilePackages: ["@cloud-party/api", "@cloud-party/db"],
   typescript: {
     ignoreBuildErrors: true,
   },
