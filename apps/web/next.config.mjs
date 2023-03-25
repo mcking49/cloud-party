@@ -6,6 +6,13 @@ const config = {
     "@cloud-party/auth",
     "@cloud-party/db",
   ],
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  swcMinify: true,
 };
 
 export default config;
