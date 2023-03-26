@@ -11,8 +11,119 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Post {
-  id      String @id @default(cuid())
-  title   String
-  content String
+enum EventInvitationStatus {
+  ACCEPTED
+  DECLINED
+  PENDING
+}
+
+enum EventUserRole {
+  OWNER
+  ADMIN
+  USER
+}
+
+enum PartyUserRole {
+  OWNER
+  ADMIN
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  USER
+}
+
+model Event {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  dateEnd   DateTime
+  dateStart DateTime
+  name      String
+  partyId   String
+
+  eventInvitations EventInvitation[]
+  eventUsers       EventUser[]
+  party            Party             @relation(fields: [partyId], references: [id])
+
+  @@index([partyId])
+}
+
+model EventInvitation {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  eventId     String
+  eventUserId String                @unique
+  status      EventInvitationStatus @default(PENDING)
+
+  event     Event     @relation(fields: [eventId], references: [id])
+  eventUser EventUser @relation(fields: [eventUserId], references: [id])
+
+  @@index([eventId])
+  @@index([eventUserId])
+}
+
+model EventUser {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  eventId           String
+  eventInvitationId String?       @unique
+  role              EventUserRole @default(USER)
+  userId            String?
+
+  event           Event            @relation(fields: [eventId], references: [id])
+  eventInvitation EventInvitation? @relation
+  user            User?            @relation(fields: [userId], references: [id])
+
+  @@index([eventId])
+  @@index([eventInvitationId])
+  @@index([userId])
+}
+
+model Party {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  events     Event[]
+  name       String
+  partyUsers PartyUser[]
+}
+
+model PartyUser {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  partyId String
+  role    PartyUserRole @default(ADMIN)
+  userId  String
+
+  party Party @relation(fields: [partyId], references: [id])
+  user  User  @relation(fields: [userId], references: [id])
+
+  @@index([partyId])
+  @@index([userId])
+}
+
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  authId     String      @unique
+  avatarUrl  String?
+  email      String      @unique
+  eventUsers EventUser[]
+  firstName  String?
+  lastName   String?
+  partyUsers PartyUser[]
+  role       UserRole    @default(USER)
+
+  @@index([authId])
 }
