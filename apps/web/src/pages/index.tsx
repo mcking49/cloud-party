@@ -1,4 +1,5 @@
 import { type NextPage } from "next";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useAuth } from "@clerk/nextjs";
 
@@ -35,6 +36,16 @@ const Web: NextPage = () => {
           <code>{flagValue}</code>
 
           {!isLoading && <p>{`Hello, ${user?.firstName ?? ""}`}</p>}
+
+          {user && user.avatarUrl && (
+            <Image
+              alt="Avatar"
+              src={user.avatarUrl}
+              height={48}
+              width={48}
+              className="h-12 w-12 rounded-full border border-black"
+            />
+          )}
         </>
       )}
     </div>
