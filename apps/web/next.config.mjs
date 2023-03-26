@@ -5,6 +5,9 @@ const config = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ["images.clerk.dev", "www.gravatar.com"],
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },

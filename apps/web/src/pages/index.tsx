@@ -1,23 +1,51 @@
 import { type NextPage } from "next";
-import { useFlags } from "flagsmith/react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { useAuth } from "@clerk/nextjs";
 
 import { Button } from "@cloud-party/ui";
 
-const Web: NextPage = () => {
-  const flags = useFlags(["proof_of_concept"]);
+import { api } from "@/utils/api";
+import { useFeatureFlag } from "@/hooks/feature-flag";
 
+const Web: NextPage = () => {
   const { enabled: proofOfConceptEnabled, value: flagValue } =
-    flags.proof_of_concept;
+    useFeatureFlag("proof_of_concept");
+
+  const { signOut } = useAuth();
+  const router = useRouter();
+
+  const { data: user, isLoading } = api.user.findMeOrCreateMe.useQuery();
+
+  const logout = async () => {
+    await signOut();
+    await router.push("/sign-in");
+  };
 
   return (
     <div className="h-screen w-screen bg-slate-600">
       <h1 className="text-9xl font-bold">Web</h1>
       {proofOfConceptEnabled && (
         <>
-          <Button className="my-test-class font-thin uppercase">
-            Lets go world
+          <Button
+            className="my-test-class font-thin uppercase"
+            onClick={() => void logout()}
+          >
+            Log out
           </Button>
           <code>{flagValue}</code>
+
+          {!isLoading && <p>{`Hello, ${user?.firstName ?? ""}`}</p>}
+
+          {user && user.avatarUrl && (
+            <Image
+              alt="Avatar"
+              src={user.avatarUrl}
+              height={48}
+              width={48}
+              className="h-12 w-12 rounded-full border border-black"
+            />
+          )}
         </>
       )}
     </div>

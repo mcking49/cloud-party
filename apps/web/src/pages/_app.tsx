@@ -7,6 +7,8 @@ import { env } from "@/env.mjs";
 import "../styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
+import { api } from "@/utils/api";
+
 type Props = {
   flagsmithState?: IState;
 };
@@ -37,4 +39,4 @@ App.getInitialProps = async () => {
   };
 };
 
-export default App;
+export default api.withTRPC(App);
