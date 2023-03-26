@@ -3,8 +3,11 @@ import { useFlags } from "flagsmith/react";
 
 import { Button } from "@cloud-party/ui";
 
+import { api } from "@/utils/api";
+
 const Web: NextPage = () => {
   const flags = useFlags(["proof_of_concept"]);
+  const { data: user, isLoading } = api.user.findMeOrCreateMe.useQuery();
 
   const { enabled: proofOfConceptEnabled, value: flagValue } =
     flags.proof_of_concept;
@@ -18,6 +21,8 @@ const Web: NextPage = () => {
             Lets go world
           </Button>
           <code>{flagValue}</code>
+
+          {!isLoading && <p>{`Hello, ${user?.firstName ?? ""}`}</p>}
         </>
       )}
     </div>
