@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { SignUp } from "@clerk/nextjs";
 
 import { useFeatureFlag } from "@/hooks/feature-flag";
+import { AuthLayout } from "@/layouts";
 
 const SignUpPage: NextPage = () => {
   const { query } = useRouter();
@@ -19,12 +20,14 @@ const SignUpPage: NextPage = () => {
   }
 
   return (
-    <SignUp
-      path="/sign-up"
-      routing="path"
-      signInUrl="/sign-in"
-      redirectUrl={redirectUrl}
-    />
+    <AuthLayout>
+      <SignUp
+        path="/sign-up"
+        routing="path"
+        signInUrl="/sign-in"
+        redirectUrl={redirectUrl}
+      />
+    </AuthLayout>
   );
 };
 

@@ -5,6 +5,7 @@ import { SignIn } from "@clerk/nextjs";
 import { clsx } from "clsx";
 
 import { useFeatureFlag } from "@/hooks/feature-flag";
+import { AuthLayout } from "@/layouts";
 
 const SignInPage: NextPage = () => {
   const { query } = useRouter();
@@ -34,20 +35,22 @@ const SignInPage: NextPage = () => {
   }, [signUpEnabled]);
 
   return (
-    <SignIn
-      path="/sign-in"
-      routing="path"
-      signUpUrl="/sign-up"
-      redirectUrl={redirectUrl}
-      appearance={{
-        elements: {
-          // NOTE: this doesn't remove the link from the DOM.
-          dividerRow: clsx({ hidden: !signUpEnabled }),
-          footer: clsx({ hidden: !signUpEnabled }),
-          socialButtons: clsx({ hidden: !signUpEnabled }),
-        },
-      }}
-    />
+    <AuthLayout>
+      <SignIn
+        path="/sign-in"
+        routing="path"
+        signUpUrl="/sign-up"
+        redirectUrl={redirectUrl}
+        appearance={{
+          elements: {
+            // NOTE: this doesn't remove the link from the DOM.
+            dividerRow: clsx({ hidden: !signUpEnabled }),
+            footer: clsx({ hidden: !signUpEnabled }),
+            socialButtons: clsx({ hidden: !signUpEnabled }),
+          },
+        }}
+      />
+    </AuthLayout>
   );
 };
 

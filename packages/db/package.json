@@ -8,14 +8,14 @@
     "clean": "rm -rf .turbo node_modules",
     "db:generate": "prisma generate",
     "db:push": "prisma db push --skip-generate",
-    "dev": "prisma studio --port 5556"
+    "dev": "prisma studio --port 5556 --browser none"
   },
   "dependencies": {
-    "@prisma/client": "^4.11.0"
+    "@prisma/client": "^4.12.0"
   },
   "devDependencies": {
     "@cloud-party/tsconfig": "workspace:*",
-    "prisma": "^4.11.0",
+    "prisma": "^4.12.0",
     "typescript": "^5.0.2"
   }
 }
