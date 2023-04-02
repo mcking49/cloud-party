@@ -19,7 +19,7 @@ export const Button: FC<ButtonProps> = ({
     <button
       className={clsx(
         className,
-        "rounded-lg bg-lime-300 py-2 px-4 text-lime-900",
+        "rounded-lg bg-lime-300 px-4 py-2 text-lime-900",
       )}
       {...props}
     >
