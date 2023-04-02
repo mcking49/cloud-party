@@ -1,4 +1,3 @@
-import { type NextPage } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useAuth } from "@clerk/nextjs";
@@ -7,8 +6,10 @@ import { Button } from "@cloud-party/ui";
 
 import { api } from "@/utils/api";
 import { useFeatureFlag } from "@/hooks/feature-flag";
+import DashboardLayout from "@/layouts/dashboard-layout";
+import { type NextPageWithLayout } from "./_app";
 
-const Web: NextPage = () => {
+const Web: NextPageWithLayout = () => {
   const { enabled: proofOfConceptEnabled, value: flagValue } =
     useFeatureFlag("proof_of_concept");
 
@@ -50,6 +51,10 @@ const Web: NextPage = () => {
       )}
     </div>
   );
+};
+
+Web.getLayout = (page) => {
+  return <DashboardLayout>{page}</DashboardLayout>;
 };
 
 export default Web;

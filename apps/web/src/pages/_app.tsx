@@ -1,23 +1,34 @@
-import { type AppProps, type AppType } from "next/app";
+import type { ReactElement } from "react";
+import type { NextPage } from "next";
+import type { AppProps, AppType } from "next/app";
+import { ClerkProvider } from "@clerk/nextjs";
 import flagsmith from "flagsmith/isomorphic";
 import { FlagsmithProvider } from "flagsmith/react";
-import { type IState } from "flagsmith/types";
+import type { IState } from "flagsmith/types";
 
 import { env } from "@/env.mjs";
 import "../styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-
 import { api } from "@/utils/api";
+
+export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactElement;
+};
 
 type Props = {
   flagsmithState?: IState;
 };
 
+type AppPropsWithLayout = AppProps<Props> & {
+  Component: NextPageWithLayout;
+} & Props;
+
 const App: AppType = ({
   Component,
   pageProps,
   flagsmithState,
-}: AppProps<Props> & Props) => {
+}: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page);
+
   return (
     <ClerkProvider {...pageProps}>
       <FlagsmithProvider
@@ -25,7 +36,7 @@ const App: AppType = ({
         options={{ environmentID: env.NEXT_PUBLIC_FLAGSMITH_ENV_KEY }}
         flagsmith={flagsmith}
       >
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
       </FlagsmithProvider>
     </ClerkProvider>
   );
