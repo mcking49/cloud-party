@@ -8,7 +8,7 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "ui-storybook",
+    "workshop",
     "@cloud-party/prettier",
     "@cloud-party/api",
     "@cloud-party/db",
