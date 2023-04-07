@@ -1,19 +1,36 @@
 {
   "name": "@cloud-party/tailwind",
   "version": "0.0.0",
-  "main": "index.js",
   "private": true,
-  "license": "MIT",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
+    },
+    "./postcss": {
+      "import": "./dist/postcss.esm.js",
+      "require": "./dist/postcss.cjs.js",
+      "types": "./dist/postcss.d.ts"
+    }
+  },
   "files": [
-    "index.js",
-    "postcss.js"
+    "dist/**"
   ],
   "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "dev:ui": "pnpm dev",
     "clean": "rm -rf .turbo node_modules"
   },
   "devDependencies": {
+    "@cloud-party/tsconfig": "workspace:*",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.3.1"
+    "tailwindcss": "^3.3.1",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.2"
   }
 }

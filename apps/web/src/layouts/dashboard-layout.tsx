@@ -9,6 +9,12 @@ const DashboardLayout: FC<PropsWithChildren> = ({ children }) => {
       </header>
       <main className="grow rounded-md bg-white p-4 shadow-md dark:bg-gray-950 dark:text-white">
         {children}
+        <p className="text-primary-500">
+          Hello world this is from tailwind package
+        </p>
+        <p className="text-primary-boobaa">
+          Hello world this is from ui package
+        </p>
       </main>
     </div>
   );

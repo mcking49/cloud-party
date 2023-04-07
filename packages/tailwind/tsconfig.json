@@ -1,9 +1,7 @@
 {
   "extends": "@cloud-party/tsconfig/react-library.json",
   "include": [
-    "src",
-    "tailwind.config.ts",
-    "tsup.config.ts"
+    ".",
   ],
   "exclude": [
     "dist",

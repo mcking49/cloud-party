@@ -17,8 +17,9 @@ export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
 export const BUTTON_ICON_POSITIONS = ["left", "right"] as const;
 export type ButtonIconPosition = (typeof BUTTON_ICON_POSITIONS)[number];
 
-export const BUTTON_BASE_CLASSES = "py-2 px-4 rounded-md font-medium border";
-export const ICON_BASE_CLASSES = "px-2";
+export const BUTTON_BASE_CLASSES = "rounded-md font-medium border";
+export const BUTTON_CLASSES = `${BUTTON_BASE_CLASSES} px-4 py-2`;
+export const ICON_BUTTON_CLASSES = `${BUTTON_BASE_CLASSES} p-2`;
 
 export const BUTTON_VARIANT_CLASSES: Record<ButtonVariant, string> = {
   ghost: "",
@@ -41,9 +42,8 @@ export const getButtonClasses = (
   ...rest: string[]
 ) => {
   return clsx(
-    BUTTON_BASE_CLASSES,
+    hasIcon ? ICON_BUTTON_CLASSES : BUTTON_CLASSES,
     BUTTON_VARIANT_CLASSES[variant],
-    hasIcon && ICON_BASE_CLASSES,
     ...rest,
   );
 };

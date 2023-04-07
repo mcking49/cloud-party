@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-const config = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
@@ -7,6 +8,7 @@ const config = {
       colors: {
         primary: {
           500: "#25404e",
+          400: "red",
         },
       },
     },
@@ -14,4 +16,4 @@ const config = {
   plugins: [],
 };
 
-module.exports = config;
+export default config;
