@@ -8,6 +8,7 @@ const config = {
     "./node_modules/@cloud-party/ui/**/*.{tsx,js,jsx,ts}",
   ],
   presets: [preset],
+  plugins: [require("@headlessui/tailwindcss")],
 } satisfies Config;
 
 export default config;
