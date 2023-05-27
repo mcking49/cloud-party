@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "build": "pnpm with-env turbo build",
-    "build-storybook": "pnpm with-env turbo build --filter ui-storybook",
-    "chromatic": "pnpm build-storybook && pnpx chromatic -d apps/ui-storybook/storybook-static",
+    "build-storybook": "pnpm with-env turbo build --filter workshop",
+    "chromatic": "pnpm build-storybook && pnpx chromatic -d apps/workshop/storybook-static",
     "ci-check": "pnpm turbo build lint type-check && pnpm format:check",
     "clean": "git clean -xdf node_modules",
     "clean:workspaces": "turbo clean",
@@ -44,5 +44,5 @@
   "engines": {
     "node": "16"
   },
-  "packageManager": "pnpm@8.0.0"
+  "packageManager": "pnpm@8.1.1"
 }
