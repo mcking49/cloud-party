@@ -11,11 +11,11 @@
     "dev": "prisma studio --port 5556 --browser none"
   },
   "dependencies": {
-    "@prisma/client": "^4.12.0"
+    "@prisma/client": "^4.15.0"
   },
   "devDependencies": {
     "@cloud-party/tsconfig": "workspace:*",
-    "prisma": "^4.12.0",
+    "prisma": "^4.15.0",
     "typescript": "^5.1.3"
   }
 }
