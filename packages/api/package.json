@@ -27,6 +27,6 @@
     "@cloud-party/tsconfig": "workspace:*",
     "eslint": "^8.36.0",
     "eslint-config-cloud-party": "workspace:*",
-    "typescript": "^5.0.2"
+    "typescript": "^5.1.3"
   }
 }
