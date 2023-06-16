@@ -32,7 +32,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@types/eslint": "^8.40.2",
     "@types/node": "^18.15.3",
-    "chromatic": "^6.17.2",
+    "chromatic": "^6.19.8",
     "dotenv-cli": "^7.1.0",
     "eslint": "^8.43.0",
     "eslint-config-cloud-party": "workspace:*",
