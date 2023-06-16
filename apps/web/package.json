@@ -32,7 +32,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.3",
+    "@babel/core": "^7.22.5",
     "@cloud-party/tailwind": "workspace:*",
     "@cloud-party/tsconfig": "workspace:*",
     "@types/node": "^18.15.3",
