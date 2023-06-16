@@ -24,7 +24,7 @@
     "@trpc/react-query": "^10.16.0",
     "@trpc/server": "^10.16.0",
     "clsx": "^1.2.1",
-    "flagsmith": "^3.18.2",
+    "flagsmith": "^3.18.3",
     "next": "^13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",

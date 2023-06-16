@@ -90,8 +90,8 @@ importers:
         specifier: ^1.2.1
         version: 1.2.1
       flagsmith:
-        specifier: ^3.18.2
-        version: 3.18.2
+        specifier: ^3.18.3
+        version: 3.18.3
       next:
         specifier: ^13.2.4
         version: 13.2.4(@babel/core@7.21.3)(react-dom@18.2.0)(react@18.2.0)
@@ -9220,8 +9220,8 @@ packages:
       pkg-dir: 4.2.0
     dev: true
 
-  /flagsmith@3.18.2:
-    resolution: {integrity: sha512-U/v7z6FiGOq6sdeRx5QSlkkltmnVL4dk8WWVEIR5s48qs2C+OkQMbd4yjSextyEhdyjbrFaWGAXKSsHOxTIRJg==}
+  /flagsmith@3.18.3:
+    resolution: {integrity: sha512-ja+Gd0nSSBSsUSvLG4/91tYI8bm1NZSDY0YkyVREl1E6L4p/bYNk1AYuuPTu4kr4cg9VjbggWIYw3Zq5dWFABA==}
     dev: false
 
   /flat-cache@3.0.4:
