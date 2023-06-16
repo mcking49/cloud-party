@@ -33,7 +33,7 @@
     "@types/eslint": "^8.40.2",
     "@types/node": "^18.15.3",
     "chromatic": "^6.19.8",
-    "dotenv-cli": "^7.1.0",
+    "dotenv-cli": "^7.2.1",
     "eslint": "^8.43.0",
     "eslint-config-cloud-party": "workspace:*",
     "prettier": "^2.8.8",
