@@ -1,3 +1,5 @@
+import { withThemeByClassName } from "@storybook/addon-styling";
+
 import "../src/styles/index.css";
 import { themes } from "@storybook/theming";
 
@@ -13,14 +15,14 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  darkMode: {
-    dark: {
-      ...themes.dark,
-    },
-    light: {
-      ...themes.light,
-    },
-    current: "light",
-    stylePreview: true,
-  },
 };
+
+export const decorators = [
+  withThemeByClassName({
+    themes: {
+      light: "",
+      dark: "dark",
+    },
+    defaultTheme: "light",
+  }),
+];

@@ -1,28 +1,32 @@
-import { type ComponentMeta, type ComponentStory } from "@storybook/react";
+import { type Meta, type StoryObj } from "@storybook/react";
 
 import { Button, IconMenu } from "@cloud-party/ui";
 
-export default {
-  title: "Example/Button",
+const meta = {
+  title: "Components/Button",
   component: Button,
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+export default meta;
+type Story = StoryObj<typeof meta>;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  className: "this-is-a-test-class",
-  children: "Button",
+export const Primary: Story = {
+  args: {
+    className: "this-is-a-test-class",
+    children: "Button",
+  },
 };
 
-export const Outline = Template.bind({});
-Outline.args = {
-  variant: "outline",
-  children: "Button",
+export const Outline: Story = {
+  args: {
+    variant: "outline",
+    children: "Button",
+  },
 };
 
-export const IconButton = Template.bind({});
-IconButton.args = {
-  icon: <IconMenu />,
-  variant: "outline",
+export const IconButton: Story = {
+  args: {
+    icon: <IconMenu />,
+    variant: "outline",
+  },
 };
