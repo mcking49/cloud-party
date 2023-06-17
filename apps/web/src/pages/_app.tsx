@@ -7,7 +7,9 @@ import { FlagsmithProvider } from "flagsmith/react";
 import type { IState } from "flagsmith/types";
 
 import { env } from "@/env.mjs";
+
 import "../styles/globals.css";
+
 import { api } from "@/utils/api";
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {

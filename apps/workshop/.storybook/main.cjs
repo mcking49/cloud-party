@@ -3,25 +3,17 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
+    "@storybook/addon-styling",
     "@storybook/addon-interactions",
-    "storybook-dark-mode",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        cssLoaderOptions: {
-          importLoaders: 1,
-        },
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
-    },
   ],
-  framework: "@storybook/react",
-  core: {
-    builder: "@storybook/builder-vite",
+  framework: {
+    name: "@storybook/react-vite",
+    options: {},
   },
   features: {
     storyStoreV7: true,
+  },
+  docs: {
+    autodocs: true,
   },
 };

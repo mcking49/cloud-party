@@ -8,13 +8,13 @@
     "clean": "rm -rf .turbo node_modules"
   },
   "peerDependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^3.7.1"
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2"
   },
   "devDependencies": {
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.8"
   },
   "dependencies": {
-    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
-    "@types/prettier": "^2.7.2"
+    "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
+    "@types/prettier": "^2.7.3"
   }
 }
