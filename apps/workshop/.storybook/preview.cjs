@@ -1,6 +1,7 @@
 import { withThemeByClassName } from "@storybook/addon-styling";
 
 import "../src/styles/index.css";
+
 import { themes } from "@storybook/theming";
 
 if (module?.hot) {
