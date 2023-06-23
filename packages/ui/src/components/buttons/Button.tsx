@@ -1,15 +1,7 @@
-import {
-  forwardRef,
-  type ButtonHTMLAttributes,
-  type DetailedHTMLProps,
-  type ReactElement,
-} from "react";
+import { forwardRef, type ComponentProps, type ReactElement } from "react";
 import clsx from "clsx";
 
-export type HTMLButtonProps = DetailedHTMLProps<
-  ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
->;
+export type HTMLButtonProps = ComponentProps<"button">;
 
 export const BUTTON_VARIANTS = ["solid", "outline", "ghost", "text"] as const;
 export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
