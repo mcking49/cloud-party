@@ -9,4 +9,4 @@ export const IconMenu = forwardRef<SVGSVGElement, IconProps>(
   ),
 );
 
-IconMenu.displayName = "MenuIcon";
+IconMenu.displayName = "IconMenu";
