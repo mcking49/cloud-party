@@ -14,8 +14,10 @@ export const LogoutButton = () => {
 
   return (
     <Button
-      icon={<IconLogout />}
-      className="text-red-500"
+      icon={
+        <IconLogout className="text-amber-400 transition dark:text-amber-800" />
+      }
+      className="bg-white"
       onClick={() => void logout()}
     />
   );

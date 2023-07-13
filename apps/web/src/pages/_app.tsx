@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactElement } from "react";
+import { type ReactElement } from "react";
 import type { NextPage } from "next";
 import type { AppProps, AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -11,6 +11,7 @@ import { env } from "@/env.mjs";
 import "../styles/globals.css";
 
 import { api } from "@/utils/api";
+import { useDarkMode } from "@/hooks/dark-mode/use-dark-mode";
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactElement;
@@ -30,20 +31,7 @@ const App: AppType = ({
   flagsmithState,
 }: AppPropsWithLayout) => {
   const getLayout = Component.getLayout ?? ((page) => page);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    const initialColorValue = root.style.getPropertyValue(
-      "--initial-color-mode",
-    );
-    setIsDarkMode(initialColorValue === "dark");
-  }, []);
-
-  useEffect(() => {
-    // set 'dark' classname on body
-    window.document.body.classList.toggle("dark", isDarkMode);
-  }, [isDarkMode]);
+  useDarkMode();
 
   return (
     <ClerkProvider {...pageProps}>
