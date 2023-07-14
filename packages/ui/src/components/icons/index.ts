@@ -1,3 +1,4 @@
+export * from "./icon-add-event";
 export * from "./icon-dark";
 export * from "./icon-event";
 export * from "./icon-light";

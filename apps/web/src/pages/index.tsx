@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-import { IconEvent } from "@cloud-party/ui";
+import { IconAddEvent } from "@cloud-party/ui";
 
 import { api } from "@/utils/api";
 import { NoItemsWithCTA } from "@/components/empty-states";
@@ -17,7 +17,7 @@ const HomePage: NextPageWithLayout = () => {
     return (
       <NoItemsWithCTA
         ctaLabel="New party"
-        icon={<IconEvent className="h-11 w-11 text-gray-400" />}
+        icon={<IconAddEvent className="text-[48px] text-gray-400" />}
         message="Get started by creating a new party."
         title="No parties"
         onClickCta={() => void router.push("/party/new")}
